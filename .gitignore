@@ -1,0 +1,48 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# --- Added by setup task: comprehensive ignores for Android/Gradle & IDEs ---
+
+# Android/Gradle build outputs
+**/build/
+**/outputs/
+captures/
+
+# Packages / artifacts
+*.apk
+*.aab
+
+# IDEs and editors
+.idea/
+*.iml
+.vscode/
+
+# Local configs and secrets
+keystore.properties
+*.jks
+*.keystore
+
+# Logs and temporary files
+*.log
+
+# OS cruft
+Thumbs.db
+
+# Compiled classes
+**/*.class
+
+# Note: Keep Gradle wrapper files tracked
+# Do not ignore gradle/wrapper/* or gradlew scripts
