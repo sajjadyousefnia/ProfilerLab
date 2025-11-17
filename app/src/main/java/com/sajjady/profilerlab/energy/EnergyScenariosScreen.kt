@@ -1,8 +1,10 @@
 package com.sajjady.profilerlab.energy
 
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -20,7 +22,12 @@ import androidx.work.workDataOf
 fun EnergyScenariosScreen() {
     val context = LocalContext.current
 
-    Column(Modifier.padding(16.dp)) {
+    Column(
+        Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+            .padding(16.dp)
+    ) {
         Text("Energy & Background Scenarios", style = MaterialTheme.typography.headlineSmall)
         Spacer(Modifier.height(16.dp))
 

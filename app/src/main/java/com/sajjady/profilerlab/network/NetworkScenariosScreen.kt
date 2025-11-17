@@ -1,7 +1,9 @@
 package com.sajjady.profilerlab.network
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -26,7 +28,12 @@ fun NetworkScenariosScreen() {
     var status by remember { mutableStateOf("") }
     var pollingJob by remember { mutableStateOf<Job?>(null) }
 
-    Column(Modifier.padding(16.dp)) {
+    Column(
+        Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+            .padding(16.dp)
+    ) {
         Text("Network Profiler Scenarios", style = MaterialTheme.typography.headlineSmall)
         Spacer(Modifier.height(16.dp))
 
@@ -73,4 +80,3 @@ fun NetworkScenariosScreen() {
         Text(status)
     }
 }
-

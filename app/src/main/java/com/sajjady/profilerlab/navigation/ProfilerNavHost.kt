@@ -1,8 +1,10 @@
 package com.sajjady.profilerlab.navigation
 
-
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -12,6 +14,7 @@ import com.sajjady.profilerlab.memory.MemoryScenariosScreen
 import com.sajjady.profilerlab.network.NetworkScenariosScreen
 import com.sajjady.profilerlab.tracing.CustomTraceScreen
 import com.sajjady.profilerlab.ui.HomeScreen
+import com.sajjady.profilerlab.ui.theme.ProfilerDayTheme
 
 object Routes {
     const val HOME = "home"
@@ -26,24 +29,27 @@ object Routes {
 fun ProfilerNavHost() {
     val navController = rememberNavController()
 
-    MaterialTheme(
-
-    ) {
-        NavHost(navController = navController, startDestination = Routes.HOME) {
-            composable(Routes.HOME) {
-                HomeScreen(
-                    onCpuClick = { navController.navigate(Routes.CPU) },
-                    onMemoryClick = { navController.navigate(Routes.MEMORY) },
-                    onNetworkClick = { navController.navigate(Routes.NETWORK) },
-                    onEnergyClick = { navController.navigate(Routes.ENERGY) },
-                    onTraceClick = { navController.navigate(Routes.TRACE) },
-                )
+    ProfilerDayTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            NavHost(navController = navController, startDestination = Routes.HOME) {
+                composable(Routes.HOME) {
+                    HomeScreen(
+                        onCpuClick = { navController.navigate(Routes.CPU) },
+                        onMemoryClick = { navController.navigate(Routes.MEMORY) },
+                        onNetworkClick = { navController.navigate(Routes.NETWORK) },
+                        onEnergyClick = { navController.navigate(Routes.ENERGY) },
+                        onTraceClick = { navController.navigate(Routes.TRACE) },
+                    )
+                }
+                composable(Routes.CPU) { CpuScenariosScreen() }
+                composable(Routes.MEMORY) { MemoryScenariosScreen() }
+                composable(Routes.NETWORK) { NetworkScenariosScreen() }
+                composable(Routes.ENERGY) { EnergyScenariosScreen() }
+                composable(Routes.TRACE) { CustomTraceScreen() }
             }
-            composable(Routes.CPU) { CpuScenariosScreen() }
-            composable(Routes.MEMORY) { MemoryScenariosScreen() }
-            composable(Routes.NETWORK) { NetworkScenariosScreen() }
-            composable(Routes.ENERGY) { EnergyScenariosScreen() }
-            composable(Routes.TRACE) { CustomTraceScreen() }
         }
     }
 }
