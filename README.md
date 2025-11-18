@@ -14,28 +14,28 @@ This app is intentionally full of **good and bad patterns** (blocking main threa
 ## Screenshots & diagrams
 
 > Images are stored in the project root as `1.PNG` … `7.PNG`.  
-> You can rename or move them later and update these paths.
+> Displayed below with reduced width for better readability on GitHub.
 
-1. Profiler overview  
-   ![Profiler overview](1.png)
+1. **Profiler overview**  
+   <img src="1.PNG" alt="Profiler overview" width="420"/>
 
-2. CPU flame chart vs top-down view  
-   ![CPU flame chart vs top-down](2.png)
+2. **CPU flame chart vs top-down view**  
+   <img src="2.PNG" alt="CPU flame chart vs top-down" width="420"/>
 
-3. Memory leak vs normal lifecycle  
-   ![Memory leak vs normal lifecycle](3.png)
+3. **Memory leak vs normal lifecycle**  
+   <img src="3.PNG" alt="Memory leak vs normal lifecycle" width="420"/>
 
-4. Network burst vs polling timeline  
-   ![Network burst vs polling](4.png)
+4. **Network burst vs polling timeline**  
+   <img src="4.PNG" alt="Network burst vs polling" width="420"/>
 
-5. WakeLock & Background Task Inspector  
-   ![WakeLock & Background Task Inspector](5.png)
+5. **WakeLock & Background Task Inspector**  
+   <img src="5.PNG" alt="WakeLock & Background Task Inspector" width="420"/>
 
-6. Custom trace flow  
-   ![Custom trace flow](6.png)
+6. **Custom trace flow**  
+   <img src="6.PNG" alt="Custom trace flow" width="420"/>
 
-7. ProfilerLab home screen (main menu)  
-   ![ProfilerLab home screen](7.png)
+7. **ProfilerLab home screen (main menu)**  
+   <img src="7.PNG" alt="ProfilerLab home screen" width="420"/>
 
 ---
 
