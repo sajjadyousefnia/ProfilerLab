@@ -17,25 +17,25 @@ This app is intentionally full of **good and bad patterns** (blocking main threa
 > Displayed below with reduced width for better readability on GitHub.
 
 1. **Profiler overview**  
-   <img src="1.PNG" alt="Profiler overview" width="420"/>
+   <img src="1.png" alt="Profiler overview" width="420"/>
 
 2. **CPU flame chart vs top-down view**  
-   <img src="2.PNG" alt="CPU flame chart vs top-down" width="420"/>
+   <img src="2.png" alt="CPU flame chart vs top-down" width="420"/>
 
 3. **Memory leak vs normal lifecycle**  
-   <img src="3.PNG" alt="Memory leak vs normal lifecycle" width="420"/>
+   <img src="3.png" alt="Memory leak vs normal lifecycle" width="420"/>
 
 4. **Network burst vs polling timeline**  
-   <img src="4.PNG" alt="Network burst vs polling" width="420"/>
+   <img src="4.png" alt="Network burst vs polling" width="420"/>
 
 5. **WakeLock & Background Task Inspector**  
-   <img src="5.PNG" alt="WakeLock & Background Task Inspector" width="420"/>
+   <img src="5.png" alt="WakeLock & Background Task Inspector" width="420"/>
 
 6. **Custom trace flow**  
-   <img src="6.PNG" alt="Custom trace flow" width="420"/>
+   <img src="6.png" alt="Custom trace flow" width="420"/>
 
 7. **ProfilerLab home screen (main menu)**  
-   <img src="7.PNG" alt="ProfilerLab home screen" width="420"/>
+   <img src="7.png" alt="ProfilerLab home screen" width="420"/>
 
 ---
 
