@@ -11,17 +11,31 @@ This app is intentionally full of **good and bad patterns** (blocking main threa
 
 ---
 
-## Image placeholders (replace later)
+## Screenshots & diagrams
 
-> ℹ️ Replace `https://example.com/...` with your real GitHub raw URLs or relative paths later.
+> Images are stored in the project root as `1.PNG` … `7.PNG`.  
+> You can rename or move them later and update these paths.
 
-![Profiler overview](https://example.com/docs/images/profiler-overview.png)
-![CPU flame chart vs top-down](https://example.com/docs/images/cpu-flame-vs-topdown.png)
-![Memory leak vs normal lifecycle](https://example.com/docs/images/memory-leak-vs-normal.png)
-![Network burst vs polling](https://example.com/docs/images/network-burst-vs-polling.png)
-![WakeLock & Background Task Inspector](https://example.com/docs/images/wakelock-background-task-inspector.png)
-![Custom trace flow](https://example.com/docs/images/custom-trace-flow.png)
-![ProfilerLab home screen](https://example.com/docs/images/profilerlab-home.png)
+1. Profiler overview  
+   ![Profiler overview](1.PNG)
+
+2. CPU flame chart vs top-down view  
+   ![CPU flame chart vs top-down](2.PNG)
+
+3. Memory leak vs normal lifecycle  
+   ![Memory leak vs normal lifecycle](3.PNG)
+
+4. Network burst vs polling timeline  
+   ![Network burst vs polling](4.PNG)
+
+5. WakeLock & Background Task Inspector  
+   ![WakeLock & Background Task Inspector](5.PNG)
+
+6. Custom trace flow  
+   ![Custom trace flow](6.PNG)
+
+7. ProfilerLab home screen (main menu)  
+   ![ProfilerLab home screen](7.PNG)
 
 ---
 
@@ -313,85 +327,6 @@ Try these extra exercises:
 - Modify `DemoWakeLockWorker` to remove the wake lock and compare traces.
 - Add your own **I/O-bound** scenario (e.g., reading/writing files) and profile it.
 
----
-
-### 13. Image prompts for **Nano banana**
-
-The prompts below are optimized for **Nano banana** models (e.g. `imagen-3.0-nano-banana`).  
-Use them as-is or adapt them when generating images for this README.
-
-> **General style hint for all prompts:**  
-> _“Use a clean flat illustration style, soft rounded shapes, high contrast but not neon, light IDE-like background, minimal text labels, high resolution, 16:9 aspect ratio.”_
-
-1. **Android Studio Profiler overview**
-
-   ```text
-   Model: Nano banana (imagen-3.0-nano-banana)
-
-   Prompt:
-   "Clean flat illustration of Android Studio Profiler with four horizontal tracks labeled CPU, Memory, Network, and System Trace/Energy. Show a laptop screen with an IDE-like dark theme, simple colorful graphs on each track, and small icons for CPU, RAM, network, and battery. Use soft rounded shapes, modern flat style, high resolution, 16:9 aspect ratio, minimal UI text."
-   ```
-
-2. **CPU Flame Chart vs Top-Down view**
-
-   ```text
-   Model: Nano banana (imagen-3.0-nano-banana)
-
-   Prompt:
-   "Split-screen diagram: on the left a CPU flame chart with stacked colorful blocks forming a hot path, on the right a top-down table of methods with one row highlighted. Style it as a flat UI mockup of a profiler tool. Use a dark IDE background, clear labels 'Flame Chart' and 'Top Down' in small text, clean lines, soft corners, 16:9."
-   ```
-
-3. **Memory leak vs normal lifecycle**
-
-   ```text
-   Model: Nano banana (imagen-3.0-nano-banana)
-
-   Prompt:
-   "Two-panel infographic about Android Activity memory behavior. Left panel: normal lifecycle, an Activity box is created, destroyed, then garbage collected, with a green check icon. Right panel: memory leak, the Activity box is still held by a singleton reference, marked with a red 'Leaked' tag. Use arrows with short labels like 'Create', 'Destroy', 'GC', 'Held by singleton'. Flat illustration, simple colors, white background, 16:9."
-   ```
-
-4. **Network burst vs polling timeline**
-
-   ```text
-   Model: Nano banana (imagen-3.0-nano-banana)
-
-   Prompt:
-   "Timeline diagram comparing two HTTP traffic patterns. On the top row show a dense burst of many vertical bars close together labeled 'Burst'. On the bottom row show evenly spaced vertical bars labeled '1s polling'. Use subtle grid lines for time, small icons of clouds or servers at the ends of the lines. Flat design, high resolution, 16:9, minimal text."
-   ```
-
-5. **WakeLock & Background Task Inspector**
-
-   ```text
-   Model: Nano banana (imagen-3.0-nano-banana)
-
-   Prompt:
-   "Illustration of an Android phone staying awake due to a wake lock. Draw a small worker character holding a lock icon near the phone. Next to it, show a simplified window of 'Background Task Inspector' with one row highlighted named 'DemoWakeLockWorker'. Use soft pastel colors, light background, flat UI style, 16:9 aspect ratio."
-   ```
-
-6. **Custom trace flow**
-
-   ```text
-   Model: Nano banana (imagen-3.0-nano-banana)
-
-   Prompt:
-   "Step-by-step flow diagram showing custom tracing with Debug.startMethodTracing in Android. Use 6 boxes connected by arrows: 'Button tap' → 'startMethodTracing' → 'Heavy computation' → 'stopMethodTracing' → '.trace file' → 'Open in Android Studio'. Each box has a small icon (finger tap, code brackets, CPU, file, IDE). Flat modern style, light background, clear readable labels, 16:9."
-   ```
-
-7. **ProfilerLab app home screen**
-
-   ```text
-   Model: Nano banana (imagen-3.0-nano-banana)
-
-   Prompt:
-   "Mockup of a simple Android app home screen named 'ProfilerLab' showing cards for CPU Profiler, Memory Profiler, Network Profiler, Energy & Background, and Custom Tracing. Use Material 3-like design, rounded cards, subtle shadows, English and Persian titles on each card. Clean flat style, 16:9, minimal but realistic UI."
-   ```
-
-You can export the generated images and embed them in this README with standard Markdown (update the URLs to your own paths):
-
-```markdown
-![Profiler overview](https://example.com/docs/images/profiler-overview.png)
-```
-
 </details>
 
 ---
@@ -490,12 +425,5 @@ You can export the generated images and embed them in this README with standard 
 - تعداد iterationها و اندازه‌ی داده‌ها را عوض کن و دوباره پروفایل بگیر.  
 - یک سناریوی I/O (مثل خواندن/نوشتن فایل) اضافه کن.  
 - معادل هر سناریو را یک‌بار با الگوی درست (مثلاً بدون Leak، بدون WakeLock) بساز و نتایج را مقایسه کن.
-
----
-
-### ۶. پرامپت‌های تصویری (Nano banana)
-
-در بخش انگلیسی، برای هر موضوع (Overview، CPU، Memory، Network، Energy، Trace و Home Screen) یک پرامپت مخصوص **Nano banana** نوشته شده.  
-همان‌ها را می‌توانی مستقیم به مدل تصویری بدهی و خروجی را در README قرار بدهی.
 
 </details>
