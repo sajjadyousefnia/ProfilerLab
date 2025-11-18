@@ -17,25 +17,25 @@ This app is intentionally full of **good and bad patterns** (blocking main threa
 > You can rename or move them later and update these paths.
 
 1. Profiler overview  
-   ![Profiler overview](1.PNG)
+   ![Profiler overview](1.png)
 
 2. CPU flame chart vs top-down view  
-   ![CPU flame chart vs top-down](2.PNG)
+   ![CPU flame chart vs top-down](2.png)
 
 3. Memory leak vs normal lifecycle  
-   ![Memory leak vs normal lifecycle](3.PNG)
+   ![Memory leak vs normal lifecycle](3.png)
 
 4. Network burst vs polling timeline  
-   ![Network burst vs polling](4.PNG)
+   ![Network burst vs polling](4.png)
 
 5. WakeLock & Background Task Inspector  
-   ![WakeLock & Background Task Inspector](5.PNG)
+   ![WakeLock & Background Task Inspector](5.png)
 
 6. Custom trace flow  
-   ![Custom trace flow](6.PNG)
+   ![Custom trace flow](6.png)
 
 7. ProfilerLab home screen (main menu)  
-   ![ProfilerLab home screen](7.PNG)
+   ![ProfilerLab home screen](7.png)
 
 ---
 
