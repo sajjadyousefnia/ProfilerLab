@@ -2,13 +2,18 @@ package com.sajjady.profilerlab.cpu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.sajjady.heavyscenarios.*
+import com.sajjady.heavyscenarios.HeavyMath
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import com.sajjady.profilerlab.info.ScenarioIds
+import com.sajjady.profilerlab.ui.components.ScenarioActionRow
 
 @Composable
 fun CpuScenariosScreen() {
@@ -24,29 +29,35 @@ fun CpuScenariosScreen() {
 
         Spacer(Modifier.height(16.dp))
 
-        Button(onClick = { blockMainThread(2500) }) {
-            Text("Freeze UI (Block Main Thread 2.5s)")
-        }
+        ScenarioActionRow(
+            label = "Freeze UI (Block Main Thread 2.5s)",
+            infoId = ScenarioIds.CPU_FREEZE_UI,
+            onAction = { blockMainThread(2500) }
+        )
 
         Spacer(Modifier.height(8.dp))
 
-        Button(onClick = {
-            scope.launch(Dispatchers.Default) {
-                heavyMath.calculatePiWithLeibniz(30_000_000)
+        ScenarioActionRow(
+            label = "Heavy CPU on Background (from :heavyscenarios)",
+            infoId = ScenarioIds.CPU_BACKGROUND_LOAD,
+            onAction = {
+                scope.launch(Dispatchers.Default) {
+                    heavyMath.calculatePiWithLeibniz(30_000_000)
+                }
             }
-        }) {
-            Text("Heavy CPU on Background (from :heavyscenarios)")
-        }
+        )
 
         Spacer(Modifier.height(8.dp))
 
-        Button(onClick = {
-            scope.launch(Dispatchers.Default) {
-                allocationStorm()
+        ScenarioActionRow(
+            label = "Allocation Storm (CPU + GC)",
+            infoId = ScenarioIds.CPU_ALLOCATION_STORM,
+            onAction = {
+                scope.launch(Dispatchers.Default) {
+                    allocationStorm()
+                }
             }
-        }) {
-            Text("Allocation Storm (CPU + GC)")
-        }
+        )
     }
 }
 
