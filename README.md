@@ -333,8 +333,10 @@ Try these extra exercises:
 
 ## فارسی (Persian)
 
-<details>
-<summary>برای مشاهده توضیحات فارسی کلیک کن</summary>
+<details dir="rtl">
+<summary dir="rtl">برای مشاهده توضیحات فارسی کلیک کن</summary>
+
+<div dir="rtl" align="right">
 
 ### ۱. هدف پروژه
 
@@ -425,5 +427,7 @@ Try these extra exercises:
 - تعداد iterationها و اندازه‌ی داده‌ها را عوض کن و دوباره پروفایل بگیر.  
 - یک سناریوی I/O (مثل خواندن/نوشتن فایل) اضافه کن.  
 - معادل هر سناریو را یک‌بار با الگوی درست (مثلاً بدون Leak، بدون WakeLock) بساز و نتایج را مقایسه کن.
+
+</div>
 
 </details>

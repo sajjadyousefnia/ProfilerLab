@@ -13,13 +13,13 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.sajjady.profilerlab.ui.components.DirectionAwareText
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -82,12 +82,12 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     Column {
-                        Text(
+                        DirectionAwareText(
                             text = "ProfilerLab",
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.SemiBold
                         )
-                        Text(
+                        DirectionAwareText(
                             text = "Android Studio Profiler playground",
                             style = MaterialTheme.typography.bodySmall
                         )
@@ -126,22 +126,22 @@ private fun ScenarioCard(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
-            Text(
+            DirectionAwareText(
                 text = scenario.titleEn,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold
             )
-            Text(
+            DirectionAwareText(
                 text = scenario.titleFa,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.primary
             )
-            Text(
+            DirectionAwareText(
                 text = scenario.descriptionEn,
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(top = 6.dp)
             )
-            Text(
+            DirectionAwareText(
                 text = scenario.descriptionFa,
                 style = MaterialTheme.typography.bodySmall,
                 modifier = Modifier.padding(top = 2.dp)

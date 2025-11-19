@@ -22,7 +22,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -30,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.sajjady.profilerlab.ui.components.DirectionAwareText
 import com.sajjady.profilerlab.ui.theme.ProfilerDayTheme
 
 class ScenarioInfoActivity : ComponentActivity() {
@@ -73,7 +73,7 @@ private fun ScenarioInfoScreen(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(
+                    DirectionAwareText(
                         text = info?.title ?: "Scenario guide",
                         style = MaterialTheme.typography.titleLarge,
                         maxLines = 2
@@ -81,7 +81,7 @@ private fun ScenarioInfoScreen(
                 },
                 navigationIcon = {
                     TextButton(onClick = onBack) {
-                        Text("←")
+                        DirectionAwareText("←")
                     }
                 },
                 scrollBehavior = scrollBehavior
@@ -96,12 +96,12 @@ private fun ScenarioInfoScreen(
                     .padding(24.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                Text(
+                DirectionAwareText(
                     text = "متن راهنما برای این سناریو موجود نیست.",
                     style = MaterialTheme.typography.bodyLarge
                 )
                 FilledTonalButton(onClick = onBack) {
-                    Text("بازگشت")
+                    DirectionAwareText("بازگشت")
                 }
             }
         } else {
@@ -155,7 +155,7 @@ private fun SummaryCard(info: ScenarioInfo) {
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(
+            DirectionAwareText(
                 text = info.summary,
                 style = MaterialTheme.typography.bodyLarge,
                 fontWeight = FontWeight.SemiBold
@@ -177,14 +177,14 @@ private fun SectionCard(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            Text(
+            DirectionAwareText(
                 text = title,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold
             )
             Divider()
             lines.forEach { line ->
-                Text(
+                DirectionAwareText(
                     text = line,
                     style = MaterialTheme.typography.bodyMedium
                 )
@@ -204,14 +204,14 @@ private fun LinksSection(links: List<ScenarioLink>) {
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Text(
+            DirectionAwareText(
                 text = "مطالعه بیشتر",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold
             )
             links.forEach { link ->
                 FilledTonalButton(onClick = { openExternalLink(context, link) }) {
-                    Text(link.label)
+                    DirectionAwareText(link.label)
                 }
             }
         }
