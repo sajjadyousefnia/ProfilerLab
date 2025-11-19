@@ -9,7 +9,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.style.TextOverflow
 
 /**
@@ -29,9 +28,6 @@ fun DirectionAwareText(
 ) {
     val containsRtl = remember(text) { text.containsRtlCharacters() }
     val resolvedTextAlign = textAlign ?: if (containsRtl) TextAlign.End else null
-    val resolvedDirection =
-        if (containsRtl) TextDirection.ContentOrRtl else TextDirection.ContentOrLtr
-
     Text(
         text = text,
         modifier = modifier,
@@ -39,7 +35,6 @@ fun DirectionAwareText(
         color = color,
         fontWeight = fontWeight,
         textAlign = resolvedTextAlign,
-        textDirection = resolvedDirection,
         maxLines = maxLines,
         overflow = overflow
     )
