@@ -16,6 +16,9 @@
             android:name=".memory.LeakyActivity"
             android:exported="false" />
         <activity
+            android:name=".info.ScenarioInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

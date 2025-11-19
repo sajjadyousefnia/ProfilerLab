@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,6 +20,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import com.sajjady.profilerlab.info.ScenarioIds
+import com.sajjady.profilerlab.ui.components.ScenarioActionRow
 
 @Composable
 fun NetworkScenariosScreen() {
@@ -37,44 +38,50 @@ fun NetworkScenariosScreen() {
         Text("Network Profiler Scenarios", style = MaterialTheme.typography.headlineSmall)
         Spacer(Modifier.height(16.dp))
 
-        Button(onClick = {
-            scope.launch(Dispatchers.IO) {
-                try {
-                    repeat(20) {
-                        NetworkApi.service.getPosts()
-                    }
-                    status = "20 burst requests done."
-                } catch (t: Throwable) {
-                    status = "Error: ${t.message}"
-                }
-            }
-        }) {
-            Text("Burst 20 requests")
-        }
-
-        Spacer(Modifier.height(8.dp))
-
-        Button(onClick = {
-            if (pollingJob == null) {
-                pollingJob = scope.launch(Dispatchers.IO) {
-                    repeat(60) {
-                        NetworkApi.service.getPosts()
-                        delay(1000)
+        ScenarioActionRow(
+            label = "Burst 20 requests",
+            infoId = ScenarioIds.NETWORK_BURST,
+            onAction = {
+                scope.launch(Dispatchers.IO) {
+                    try {
+                        repeat(20) {
+                            NetworkApi.service.getPosts()
+                        }
+                        status = "20 burst requests done."
+                    } catch (t: Throwable) {
+                        status = "Error: ${t.message}"
                     }
                 }
             }
-        }) {
-            Text("Start 1-second polling")
-        }
+        )
 
         Spacer(Modifier.height(8.dp))
 
-        Button(onClick = {
-            pollingJob?.cancel()
-            pollingJob = null
-        }) {
-            Text("Stop polling")
-        }
+        ScenarioActionRow(
+            label = "Start 1-second polling",
+            infoId = ScenarioIds.NETWORK_POLLING_START,
+            onAction = {
+                if (pollingJob == null) {
+                    pollingJob = scope.launch(Dispatchers.IO) {
+                        repeat(60) {
+                            NetworkApi.service.getPosts()
+                            delay(1000)
+                        }
+                    }
+                }
+            }
+        )
+
+        Spacer(Modifier.height(8.dp))
+
+        ScenarioActionRow(
+            label = "Stop polling",
+            infoId = ScenarioIds.NETWORK_POLLING_STOP,
+            onAction = {
+                pollingJob?.cancel()
+                pollingJob = null
+            }
+        )
 
         Spacer(Modifier.height(16.dp))
         Text(status)
