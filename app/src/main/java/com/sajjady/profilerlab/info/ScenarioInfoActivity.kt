@@ -10,9 +10,11 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -70,6 +72,7 @@ private fun ScenarioInfoScreen(
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        contentWindowInsets = WindowInsets.systemBars,
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
@@ -101,7 +104,10 @@ private fun ScenarioInfoScreen(
                     style = MaterialTheme.typography.bodyLarge
                 )
                 FilledTonalButton(onClick = onBack) {
-                    DirectionAwareText("بازگشت")
+                    DirectionAwareText(
+                        text = "بازگشت",
+                        expandHorizontallyWhenRtl = false
+                    )
                 }
             }
         } else {

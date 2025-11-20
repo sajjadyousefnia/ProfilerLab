@@ -1,5 +1,6 @@
 package com.sajjady.profilerlab.ui.components
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -9,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.style.TextOverflow
 
 /**
@@ -24,14 +26,26 @@ fun DirectionAwareText(
     fontWeight: FontWeight? = null,
     textAlign: TextAlign? = null,
     maxLines: Int = Int.MAX_VALUE,
-    overflow: TextOverflow = TextOverflow.Clip
+    overflow: TextOverflow = TextOverflow.Clip,
+    expandHorizontallyWhenRtl: Boolean = true
 ) {
     val containsRtl = remember(text) { text.containsRtlCharacters() }
     val resolvedTextAlign = textAlign ?: if (containsRtl) TextAlign.End else null
+    val resolvedModifier = if (containsRtl && expandHorizontallyWhenRtl) {
+        modifier.fillMaxWidth()
+    } else {
+        modifier
+    }
+    val resolvedStyle = if (containsRtl) {
+        style.merge(TextStyle(textDirection = TextDirection.Rtl))
+    } else {
+        style
+    }
+
     Text(
         text = text,
-        modifier = modifier,
-        style = style,
+        modifier = resolvedModifier,
+        style = resolvedStyle,
         color = color,
         fontWeight = fontWeight,
         textAlign = resolvedTextAlign,

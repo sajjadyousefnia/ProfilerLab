@@ -23,6 +23,7 @@ fun CpuScenariosScreen() {
         Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            .systemBarsPadding()
             .padding(16.dp)
     ) {
         Text("CPU Profiler Scenarios", style = MaterialTheme.typography.headlineSmall)
